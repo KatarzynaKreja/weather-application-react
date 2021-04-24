@@ -1,0 +1,15 @@
+input {
+  padding: 0px 40px;
+  margin-top: 5px;
+}
+button {
+  padding: 0px 40px;
+  margin-top: 5px;
+  color: #1b1b19;
+  background: #cdc2e0;
+  border: 1px solid rgb(106, 82, 196);
+}
+
+#search {
+  background: #cdc2e0;
+}
