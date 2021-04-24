@@ -1,6 +1,8 @@
 import React from "react";
 import "./Left.css";
 import "bootstrap/dist/css/bootstrap.css";
+import FormatDate from "./FormatDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Left(props) {
   return (
@@ -10,14 +12,13 @@ export default function Left(props) {
         <h1> {props.data.city} </h1>
       </div>
       <div className="timeDate">
-        <h3> Saturday 18:30 </h3>
+        <h3>
+          {" "}
+          <FormatDate date={props.data.date} />{" "}
+        </h3>
       </div>
       <div className="bottomSection">
-        <img
-          src="http://openweathermap.org/img/wn/01d@2x.png"
-          alt="clear sky"
-          className="weather-image"
-        />
+        <WeatherIcon code={props.data.icon} size={50} />
       </div>
     </div>
   );
