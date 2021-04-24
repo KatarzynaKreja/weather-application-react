@@ -2,12 +2,12 @@ import React from "react";
 import "./Left.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-export default function Left() {
+export default function Left(props) {
   return (
     <div className="col">
       <div className="city">
         {" "}
-        <h1> Catania </h1>
+        <h1> {props.data.city} </h1>
       </div>
       <div className="timeDate">
         <h3> Saturday 18:30 </h3>
