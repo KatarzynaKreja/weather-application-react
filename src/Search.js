@@ -8,7 +8,6 @@ import Right from "./Right";
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  let [weather, setWeather] = useState("");
   function changeWeather(response) {
     setWeatherData({
       ready: true,
@@ -20,9 +19,13 @@ export default function Search(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
     });
+    console.log(weatherData);
   }
   function handleSubmit(event) {
     event.preventDefault();
+    search();
+  }
+  function search() {
     let apiKey = "f77cad6d452d84a939c49b6eacf724ee";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
@@ -52,17 +55,17 @@ export default function Search(props) {
         </form>
         <div className="row">
           <div className="col">
-            <Left data={weather} />{" "}
+            <Left data={weatherData} />{" "}
           </div>
           <div className="col">
             {" "}
-            <Right data={weather} />
+            <Right data={weatherData} />
           </div>
         </div>
       </div>
     );
   } else {
-    handleSubmit();
+    search();
     return "Loading...";
   }
 }

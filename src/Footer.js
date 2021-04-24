@@ -6,12 +6,18 @@ export default function Footer() {
   return (
     <div className="git">
       <a
-        href="https://github.com/KatarzynaKreja/react-weather-app"
+        href="https://github.com/KatarzynaKreja/weather-application-react"
         target="__blank"
       >
         Open-source code
       </a>{" "}
-      by Katarzyna Kreja
+      by{" "}
+      <a
+        href="https://www.linkedin.com/in/katarzyna-kreja-03a30b198/"
+        target="__blank"
+      >
+        Katarzyna Kreja
+      </a>
     </div>
   );
 }
