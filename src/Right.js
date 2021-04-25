@@ -14,8 +14,8 @@ export default function Right(props) {
                 {" "}
                 <Temperature celsius={props.data.temperature} />{" "}
               </span>
-              <li id="humidity">{props.data.humidity} %</li>
-              <li id="wind">{props.data.wind} km/h</li>
+              <li id="humidity">Humidity: {props.data.humidity} %</li>
+              <li id="wind">Wind: {props.data.wind} km/h</li>
               <li id="description">{props.data.description}</li>
             </p>
           </div>
