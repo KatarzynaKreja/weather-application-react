@@ -49,9 +49,6 @@ export default function Search(props) {
             onChange={changeCity}
           />
           <input type="submit" className="btn" id="search" value="Search" />
-          <button type="button" className="btn" id="current">
-            📌
-          </button>
         </form>
         <div className="row">
           <div className="col">
