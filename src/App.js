@@ -5,9 +5,11 @@ import "bootstrap/dist/css/bootstrap.css";
 
 export default function App() {
   return (
-    <div className="container" id="app">
-      <Search defaultCity="Biancavilla" />
-      <Footer />
+    <div classeName="App">
+      <div className="container" id="app">
+        <Search defaultCity="Biancavilla" />
+        <Footer />
+      </div>
     </div>
   );
 }
