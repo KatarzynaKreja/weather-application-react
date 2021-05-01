@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import Left from "./Left";
 import Right from "./Right";
+import Forecast from "./Forecast";
 
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -18,8 +19,8 @@ export default function Search(props) {
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
+      coordinates: response.data.coord,
     });
-    console.log(weatherData);
   }
   function handleSubmit(event) {
     event.preventDefault();
@@ -29,7 +30,7 @@ export default function Search(props) {
     let apiKey = "f77cad6d452d84a939c49b6eacf724ee";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    console.log(apiUrl);
+
     axios.get(apiUrl).then(changeWeather);
   }
   function changeCity(event) {
@@ -58,6 +59,9 @@ export default function Search(props) {
             {" "}
             <Right data={weatherData} />
           </div>
+        </div>
+        <div>
+          <Forecast coordinates={weatherData.coordinates} />
         </div>
       </div>
     );
